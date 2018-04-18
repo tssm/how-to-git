@@ -187,6 +187,12 @@ You could need to resolve conflicts as a result of the previous
 edition. Once everything is ok you will be ready to edit the other
 chosen commits.
 
+## Generate a changelog
+
+```
+$ git log --no-merges --oneline <last tag>..
+```
+
 ## Get remote changes
 
 [Do not `git pull`][do-not-pull]. Do instead:
@@ -285,4 +291,35 @@ On the parent branch:
 ```
 git log ..<branch-whose-commits-i-want-to-see>
 ```
+
+## View the latest ten branches you have been worked on
+
+```
+git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+```
+
+## View the number of commits by author
+
+```
+git shortlog --all --no-merges --numbered --summary
+```
+
+## View which changes you're about to pull
+
+```
+git log --no-merges --oneline ..<remote>/<branch>
+```
+
+## View which changes you're about to push
+
+```
+git log --no-merges --oneline <remote>/<branch>..
+```
+
+## View your commits of the day
+
+```
+git log --all --author=<your email address> --no-merges --oneline --since=00:00:00
+```
+
 [do-not-pull]: https://adamcod.es/2014/12/10/git-pull-correct-workflow.html
