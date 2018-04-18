@@ -34,6 +34,14 @@ On the branch where you want to apply the commits:
 git cherry-pick <commit1-id> <...> <commitn-id>
 ```
 
+### Without creating a new commit
+
+```
+git cherry-pick -n <commit1-id> <...> <commitn-id>
+```
+
+Where `-n` is the short form of `--no-commit`.
+
 ## Create a tag
 
 ```
