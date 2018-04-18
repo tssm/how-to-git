@@ -1,5 +1,25 @@
 # How to Git
 
+## Choose what to keep during a conflict
+
+### While merging
+
+To keep the changes of the branch where you are located in:
+
+```
+git checkout --ours <file>
+```
+
+To keep the changes of the other branch:
+
+```
+git checkout --theirs <file>
+```
+
+### While rebasing
+
+It is exactly the other way around 🤷🏻‍♀️
+
 ## Choose what to stage
 
 ```
